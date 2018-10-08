@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "357538823150",
+    "firebase_url": "https://gsca-80fca.firebaseio.com",
+    "project_id": "gsca-80fca",
+    "storage_bucket": "gsca-80fca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357538823150:android:c0215adf1c4948e7",
+        "android_client_info": {
+          "package_name": "com.example.dev_qualicom.gsca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357538823150-trntk0sd92ljr4m2bac3mon3h3jespce.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dev_qualicom.gsca",
+            "certificate_hash": "9b21db6ea44ce103076884545b7a2c151d631570"
+          }
+        },
+        {
+          "client_id": "357538823150-6uj4ve22deivseqdahol42sthis2hdmi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8GW19x3Lr8qYhcWJg4Z8VO_ZvOl7knU0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357538823150-6uj4ve22deivseqdahol42sthis2hdmi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
