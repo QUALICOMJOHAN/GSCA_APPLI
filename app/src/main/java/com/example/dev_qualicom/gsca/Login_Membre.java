@@ -1,6 +1,7 @@
 package com.example.dev_qualicom.gsca;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,11 +23,16 @@ public class Login_Membre extends AppCompatActivity implements View.OnClickListe
     TextView email;
     TextView pass;
     ClubSingleton club;
+    SharedPreferences sharedPreferences;
+    private static final String PREFS = "ID";
+    WebService example = new WebService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login__membre);
+
+        sharedPreferences = getBaseContext().getSharedPreferences(PREFS, MODE_PRIVATE);
 
         login = (Button) findViewById(R.id.connexion);
         email = (TextView) findViewById(R.id.membre_mail);
@@ -45,7 +51,6 @@ public class Login_Membre extends AppCompatActivity implements View.OnClickListe
             @Override
             public void run() {
 
-                WebService example = new WebService();
                 String response = null;
 
                 HttpUrl.Builder urlBuilder = HttpUrl.parse(club.getUrl()+"loginMobil.php").newBuilder();
@@ -63,6 +68,11 @@ public class Login_Membre extends AppCompatActivity implements View.OnClickListe
                         Membre membre = example.getMembre(json.getString("id"));
                         MembreSingleton membresingleton = MembreSingleton.getInstance();
                         membresingleton.init(membre);
+
+                        sharedPreferences
+                                .edit()
+                                .putString(PREFS, json.getString("id"))
+                                .apply();
 
                         example.setToken(FirebaseInstanceId.getInstance().getToken(), membre);
 

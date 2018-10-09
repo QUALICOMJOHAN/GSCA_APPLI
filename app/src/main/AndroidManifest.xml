@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".Login_Membre" />
         <activity android:name=".accueil" />
+        <activity android:name=".Listmembers" />
 
         <service
             android:name=".MyFirebaseMessageService">

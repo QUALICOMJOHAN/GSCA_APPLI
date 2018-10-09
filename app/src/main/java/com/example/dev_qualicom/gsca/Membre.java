@@ -1,6 +1,7 @@
 package com.example.dev_qualicom.gsca;
 
-public class Membre {
+public class
+Membre {
 
     private int id;
     private String img_logo;

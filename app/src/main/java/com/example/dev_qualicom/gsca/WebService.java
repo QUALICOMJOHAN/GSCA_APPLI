@@ -29,6 +29,11 @@ public class WebService {
     }
 
     Membre getMembre(String id) throws IOException, JSONException {
+
+        Log.e("TEST", club.getUrl());
+        Log.e("TEST", id);
+        Log.e("TEST", club.getNom());
+
         HttpUrl.Builder urlBuilder = HttpUrl.parse(club.getUrl()+"webService/getMembre.php").newBuilder();
         urlBuilder.addQueryParameter("id", id);
         String url = urlBuilder.build().toString();
@@ -39,6 +44,9 @@ public class WebService {
             Gson gson = new Gson();
             String json = response.body().string().toString();
             Membre membre = gson.fromJson(json, Membre.class);
+
+            Log.e("TEST", membre.getNom_contact());
+
             return membre;
         }
     }
@@ -48,11 +56,7 @@ public class WebService {
         urlBuilder.addQueryParameter("id", String.valueOf(membre.getId()));
         urlBuilder.addQueryParameter("token", token);
 
-        Log.e("SAVE", String.valueOf(membre.getId()));
-        Log.e("SAVE", token);
-
         String url = urlBuilder.build().toString();
-        Log.e("SAVE", url);
         Request request = new Request.Builder()
                 .url(url)
                 .build();
