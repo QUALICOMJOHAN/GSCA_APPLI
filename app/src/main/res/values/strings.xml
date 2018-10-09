@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GSCA</string>
+    <string name="recherchez_votre_club_affaires">Recherchez votre club affaires</string>
+    <string name="identifiant_de_votre_club">Identifiant de votre club</string>
+    <string name="logo_g_rer_son_club_affaires">Logo Gérer Son Club Affaires</string>
+    <string name="me_connecter">Me connecter</string>
 </resources>
