@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="Nom événement"
+        android:text="@string/nom_event"
         android:textAllCaps="true"
         android:textColor="#1b9cfc"
         android:textSize="18sp"
@@ -22,15 +22,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/date_event"
         android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="00/00/00"
-        android:inputType="date"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:text="@string/date_event"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,18 +38,16 @@
         android:id="@+id/desc_event"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="Description événement"
+        android:text="@string/desc_event"
         android:textAllCaps="false"
         android:textColor="#3c3c3c"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_event"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/date_event" />
 
     <View
         android:id="@+id/divider2"

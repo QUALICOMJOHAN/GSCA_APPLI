@@ -6,4 +6,27 @@
     <string name="me_connecter">Me connecter</string>
     <string name="nom_du_membre">Nom du membre</string>
     <string name="prenom_du_membre">Prénom du membre</string>
+    <string name="nom_de_la_societe">Nom de la société</string>
+    <string name="societe_desc">Description de la société</string>
+    <string name="add_societe">Adresse de la société</string>
+    <string name="tel_societe">Téléphone société</string>
+    <string name="secteur_societe">Secteur d\'activité société</string>
+    <string name="mainsector">Activité principale</string>
+    <string name="mail_societe">Adresse email société</string>
+    <string name="web_societe">Site internet</string>
+    <string name="name_member">Nom du membre</string>
+    <string name="firstname_member">Prénom du membre</string>
+    <string name="post_member">Poste occupé</string>
+    <string name="tel_member">Téléphone membre</string>
+    <string name="mail_member">Adrresse email membre</string>
+    <string name="date_event">jj/mm/aaaa</string>
+    <string name="desc_event">Description de l\'événement</string>
+    <string name="nom_event">Nom de l\'événement</string>
+    <string name="title_stats">Statistiques</string>
+    <string name="lieu_event">Lieu de l\'événement</string>
+    <string name="add_event">Adresse de l\'événement</string>
+    <string name="debut_event">jj/mm/aaaa hh:mm</string>
+    <string name="fin_event">jj/mm/aaaa hh:mm</string>
+    <string name="nb_places">Nombre de place(s)</string>
+    <string name="prix_event">Prix</string>
 </resources>

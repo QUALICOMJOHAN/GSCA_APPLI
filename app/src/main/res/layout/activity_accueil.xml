@@ -22,34 +22,33 @@
         app:srcCompat="@drawable/logogsca" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="472dp"
+        android:layout_height="wrap_content"
         android:background="@android:color/white"
+        android:gravity="top"
         android:orientation="vertical"
-        android:weightSum="0.9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_weight="0.9">
+        app:layout_constraintTop_toBottomOf="@+id/logo">
 
         <LinearLayout
             android:id="@+id/events_members"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_weight="0.5"
             android:orientation="horizontal"
+            android:weightSum="1"
             app:layout_constraintTop_toBottomOf="@+id/logo">
+
 
             <ImageButton
                 android:id="@+id/members"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="190dp"
                 android:layout_weight="0.5"
                 android:background="@android:color/white"
                 android:contentDescription="@string/app_name"
-                android:scaleType="fitCenter"
+                android:elevation="0dp"
+                android:scaleType="centerInside"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:srcCompat="@drawable/members"
                 tools:layout_editor_absoluteY="241dp" />
@@ -57,11 +56,11 @@
             <ImageButton
                 android:id="@+id/events"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="190dp"
                 android:layout_weight="0.5"
                 android:background="@android:color/white"
                 android:contentDescription="@string/app_name"
-                android:scaleType="fitCenter"
+                android:scaleType="centerInside"
                 app:srcCompat="@drawable/events" />
 
         </LinearLayout>
@@ -69,33 +68,47 @@
         <LinearLayout
             android:id="@+id/stats_docs"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="24dp"
-            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/events_members">
 
             <ImageButton
                 android:id="@+id/stats"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="190dp"
                 android:layout_weight="0.5"
                 android:background="@android:color/white"
                 android:contentDescription="@string/app_name"
-                android:scaleType="fitCenter"
+                android:scaleType="centerInside"
                 app:srcCompat="@drawable/stats" />
 
             <ImageButton
                 android:id="@+id/docs"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="190dp"
                 android:layout_weight="0.5"
                 android:background="@android:color/white"
                 android:contentDescription="@string/app_name"
-                android:scaleType="fitCenter"
+                android:scaleType="centerInside"
                 app:srcCompat="@drawable/docs" />
 
         </LinearLayout>
     </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/disconnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:tint="@android:color/white"
+        app:elevation="2dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/colorPrimary"
+        app:srcCompat="@android:drawable/ic_lock_power_off" />
 
 </android.support.constraint.ConstraintLayout>

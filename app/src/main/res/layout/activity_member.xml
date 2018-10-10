@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Nom de la société"
+                android:text="@string/nom_de_la_societe"
                 android:textSize="18sp" />
 
             <TextView
@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Nom de la société"
+                android:text="@string/societe_desc"
                 android:textSize="18sp" />
 
             <TextView
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Adresse de la société"
+                android:text="@string/add_societe"
                 android:textSize="18sp" />
 
             <TextView
@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="03 80 00 00 00"
+                android:text="@string/tel_societe"
                 android:textSize="18sp" />
 
             <TextView
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Secteur d'activité"
+                android:text="@string/secteur_societe"
                 android:textSize="18sp" />
 
             <TextView
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Activité principale"
+                android:text="@string/mainsector"
                 android:textSize="18sp" />
 
             <TextView
@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="mail@adresse.fr"
+                android:text="@string/mail_societe"
                 android:textSize="18sp" />
 
             <TextView
@@ -89,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Site internet"
+                android:text="@string/web_societe"
                 android:textSize="18sp" />
 
             <ImageView
@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Nom du membre "
+                android:text="@string/name_member"
                 android:textSize="18sp" />
 
             <TextView
@@ -113,7 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Prénom du membre "
+                android:text="@string/firstname_member"
                 android:textSize="18sp" />
 
             <TextView
@@ -121,7 +121,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="Poste occupé"
+                android:text="@string/post_member"
                 android:textSize="18sp" />
 
             <TextView
@@ -129,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="06 00 00 00 00"
+                android:text="@string/tel_member"
                 android:textSize="18sp" />
 
             <TextView
@@ -137,7 +137,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
-                android:text="mail@adresse.fr"
+                android:text="@string/mail_member"
                 android:textSize="18sp" />
 
         </LinearLayout>
