@@ -3,10 +3,12 @@ package com.example.dev_qualicom.gsca;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.List;
 
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -30,10 +32,6 @@ public class WebService {
 
     Membre getMembre(String id) throws IOException, JSONException {
 
-        Log.e("TEST", club.getUrl());
-        Log.e("TEST", id);
-        Log.e("TEST", club.getNom());
-
         HttpUrl.Builder urlBuilder = HttpUrl.parse(club.getUrl()+"webService/getMembre.php").newBuilder();
         urlBuilder.addQueryParameter("id", id);
         String url = urlBuilder.build().toString();
@@ -48,6 +46,22 @@ public class WebService {
             Log.e("TEST", membre.getNom_contact());
 
             return membre;
+        }
+    }
+
+    List<Membre> getMembres() throws IOException, JSONException {
+
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(club.getUrl()+"webService/getMembres.php").newBuilder();
+        String url = urlBuilder.build().toString();
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            Gson gson = new Gson();
+            String json = response.body().string().toString();
+            List<Membre> membres = gson.fromJson(json, new TypeToken<List<Membre>>(){}.getType());
+
+            return membres;
         }
     }
 

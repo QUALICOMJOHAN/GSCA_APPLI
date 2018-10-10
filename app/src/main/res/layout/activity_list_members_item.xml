@@ -24,6 +24,8 @@
         app:layout_constraintLeft_toRightOf="@+id/img_profil"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <TextView
         android:id="@+id/societe"
         android:layout_width="wrap_content"

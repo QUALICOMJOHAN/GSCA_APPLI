@@ -3,12 +3,16 @@
     package="com.example.dev_qualicom.gsca">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/favicongsca"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Club_Log">
