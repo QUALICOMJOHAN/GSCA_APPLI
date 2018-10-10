@@ -35,7 +35,7 @@ public class list_events extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_members);
+        setContentView(R.layout.activity_list_events);
 
         OkHttpClient client = new OkHttpClient();
         ClubSingleton club = ClubSingleton.getInstance();
@@ -71,8 +71,8 @@ public class list_events extends AppCompatActivity {
 
                         EventsAdapter eventsAdapter = new EventsAdapter();
                         llm.setOrientation(LinearLayoutManager.VERTICAL);
-                        //recyclerView.setLayoutManager(llm);
-                        //recyclerView.setAdapter(eventsAdapter);
+                        recyclerView.setLayoutManager(llm);
+                        recyclerView.setAdapter(eventsAdapter);
 
                     }
                 });
