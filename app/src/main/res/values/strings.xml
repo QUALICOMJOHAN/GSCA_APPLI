@@ -4,4 +4,6 @@
     <string name="identifiant_de_votre_club">Identifiant de votre club</string>
     <string name="logo_g_rer_son_club_affaires">Logo Gérer Son Club Affaires</string>
     <string name="me_connecter">Me connecter</string>
+    <string name="nom_du_membre">Nom du membre</string>
+    <string name="prenom_du_membre">Prénom du membre</string>
 </resources>
