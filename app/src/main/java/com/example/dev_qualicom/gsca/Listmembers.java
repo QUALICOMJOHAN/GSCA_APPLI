@@ -1,5 +1,6 @@
 package com.example.dev_qualicom.gsca;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.squareup.picasso.Picasso;
-
-import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,8 +27,6 @@ import okhttp3.Response;
 public class Listmembers extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-
-    WebService exemple = new WebService();
 
     private List<Membre> listeMembres;
 
@@ -56,27 +55,25 @@ public class Listmembers extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
 
-                try {
-                    listeMembres = exemple.getMembres();
+                Gson gson = new Gson();
+                String json = response.body().string().toString();
+                listeMembres = gson.fromJson(json, new TypeToken<List<Membre>>(){}.getType());
 
-                    runOnUiThread(new Runnable() {
+                runOnUiThread(new Runnable() {
 
-                        @Override
-                        public void run() {
+                    @Override
+                    public void run() {
 
-                            recyclerView = (RecyclerView) findViewById(R.id.listmembers_list);
+                        recyclerView = (RecyclerView) findViewById(R.id.listmembers_list);
 
-                            MembresAdapter membresAdapter = new MembresAdapter();
-                            llm.setOrientation(LinearLayoutManager.VERTICAL);
-                            recyclerView.setLayoutManager(llm);
-                            recyclerView.setAdapter(membresAdapter);
+                        MembresAdapter membresAdapter = new MembresAdapter();
+                        llm.setOrientation(LinearLayoutManager.VERTICAL);
+                        recyclerView.setLayoutManager(llm);
+                        recyclerView.setAdapter(membresAdapter);
 
-                        }
-                    });
+                    }
+                });
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
             }
         });
     }
@@ -133,14 +130,13 @@ public class Listmembers extends AppCompatActivity {
         @Override
         public void onClick(View view) {
 
-            /*Artist a = WebService.getArtist(view.getId());
-            int artistId = a.id;
+            int memberId = view.getId();
 
-            Intent intent = new Intent(HomeActivity.this, ArtisteActivity.class);
+            Intent intent = new Intent(Listmembers.this, Member.class);
 
-            intent.putExtra("id", artistId);
+            intent.putExtra("id", memberId);
 
-            startActivity(intent);*/
+            startActivity(intent);
 
         }
     }

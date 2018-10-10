@@ -18,8 +18,9 @@ Membre {
     private String mail_contact;
     private String secteur_activite;
     private String activite_principal;
+    private String site_societe;
 
-    public Membre(int id, String img_logo, String nom_societe, String prenom_contact, String des_societe, String adresse_societe, String tel_societe, String mail_societe, String img_profil, String nom_contact, String statut_contact, String tel_contact, String mail_contact, String secteur_activite, String activite_principal) {
+    public Membre(int id, String img_logo, String nom_societe, String prenom_contact, String des_societe, String adresse_societe, String tel_societe, String mail_societe, String img_profil, String nom_contact, String statut_contact, String tel_contact, String mail_contact, String secteur_activite, String activite_principal, String site_societe) {
         this.id = id;
         this.img_logo = img_logo;
         this.nom_societe = nom_societe;
@@ -35,6 +36,7 @@ Membre {
         this.mail_contact = mail_contact;
         this.secteur_activite = secteur_activite;
         this.activite_principal = activite_principal;
+        this.site_societe = site_societe;
     }
 
     public int getId() {
@@ -95,6 +97,10 @@ Membre {
 
     public String getActivite_principal() {
         return activite_principal;
+    }
+
+    public String getSite_societe() {
+        return site_societe;
     }
 
 }
