@@ -55,6 +55,8 @@ public class Club_Log extends AppCompatActivity implements View.OnClickListener 
                         Intent intent = new Intent(Club_Log.this, accueil.class);
                         startActivity(intent);
 
+                        finish();
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     } catch (JSONException e) {
@@ -107,6 +109,9 @@ public class Club_Log extends AppCompatActivity implements View.OnClickListener 
 
                         Intent intent = new Intent(Club_Log.this, Login_Membre.class);
                         startActivity(intent);
+
+                        finish();
+
                     }
                 } catch (IOException e) {
                     e.printStackTrace();

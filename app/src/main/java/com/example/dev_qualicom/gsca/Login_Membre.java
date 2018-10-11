@@ -78,6 +78,8 @@ public class Login_Membre extends AppCompatActivity implements View.OnClickListe
 
                         Intent intent = new Intent(Login_Membre.this, accueil.class);
                         startActivity(intent);
+
+                        finish();
                     }
 
                 } catch (IOException e) {

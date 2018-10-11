@@ -28,6 +28,7 @@
         <activity android:name=".Listmembers" />
         <activity android:name=".Member" />
         <activity android:name=".list_events" />
+        <activity android:name=".event" />
 
         <service android:name=".MyFirebaseMessageService">
             <intent-filter>
