@@ -1,11 +1,27 @@
 package com.example.dev_qualicom.gsca;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class list_docs extends AppCompatActivity {
 
@@ -15,6 +31,8 @@ public class list_docs extends AppCompatActivity {
 
     MembreSingleton membreSingleton = MembreSingleton.getInstance();
 
+    ClubSingleton club;
+
     LinearLayoutManager llm = new LinearLayoutManager(this);
 
     @Override
@@ -22,10 +40,10 @@ public class list_docs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_docs);
 
-        /*OkHttpClient client = new OkHttpClient();
-        ClubSingleton club = ClubSingleton.getInstance();
+        OkHttpClient client = new OkHttpClient();
+        club = ClubSingleton.getInstance();
 
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(club.getUrl()+"webService/getDoc.php").newBuilder();
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(club.getUrl()+"webService/getFiles.php").newBuilder();
         urlBuilder.addQueryParameter("id", Integer.toString(membreSingleton.getMembre().getId()));
         String url = urlBuilder.build().toString();
         Request request = new Request.Builder()
@@ -43,19 +61,19 @@ public class list_docs extends AppCompatActivity {
 
                 Gson gson = new Gson();
                 String json = response.body().string().toString();
-                listeEvent = gson.fromJson(json, new TypeToken<List<Event_Class>>(){}.getType());
+                listeDoc = gson.fromJson(json, new TypeToken<List<Doc>>(){}.getType());
 
                 runOnUiThread(new Runnable() {
 
                     @Override
                     public void run() {
 
-                        recyclerView = (RecyclerView) findViewById(R.id.list_event_ecran);
+                        recyclerView = (RecyclerView) findViewById(R.id.list_docs_list);
 
-                        list_events.EventsAdapter eventsAdapter = new list_events.EventsAdapter();
+                        DocsAdapter docsAdapter = new DocsAdapter();
                         llm.setOrientation(LinearLayoutManager.VERTICAL);
                         recyclerView.setLayoutManager(llm);
-                        recyclerView.setAdapter(eventsAdapter);
+                        recyclerView.setAdapter(docsAdapter);
 
                     }
                 });
@@ -64,70 +82,61 @@ public class list_docs extends AppCompatActivity {
         });
     }
 
-    class EventsAdapter extends RecyclerView.Adapter<list_events.EventsHolder> {
+    class DocsAdapter extends RecyclerView.Adapter<DocsHolder> {
 
         @Override
-        public list_events.EventsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View vue = getLayoutInflater().inflate(R.layout.activity_list_events_item, null);
-            return new list_events.EventsHolder(vue);
+        public DocsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View vue = getLayoutInflater().inflate(R.layout.activity_list_docs_item, null);
+            return new DocsHolder(vue);
         }
 
         @Override
-        public void onBindViewHolder(list_events.EventsHolder holder, int position) {
+        public void onBindViewHolder(DocsHolder holder, int position) {
 
-            Event_Class event = listeEvent.get(position);
-            holder.bind(event);
+            Doc doc = listeDoc.get(position);
+            holder.bind(doc);
 
         }
 
         @Override
         public int getItemCount() {
-            return listeEvent.size();
+            return listeDoc.size();
         }
     }
-    class EventsHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class DocsHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView nom_event;
-        private TextView date_event;
-        private TextView desc_event;
-        private View pastille;
+        private TextView nom_doc;
+        private TextView date_doc;
+        private TextView url;
 
-        public EventsHolder(View itemView) {
+        public DocsHolder(View itemView) {
             super(itemView);
 
-            nom_event = itemView.findViewById(R.id.nom_event);
-            date_event = itemView.findViewById(R.id.date_event);
-            desc_event = itemView.findViewById(R.id.desc_event);
-            pastille = itemView.findViewById(R.id.pastille);
+            nom_doc = itemView.findViewById(R.id.nom_doc);
+            date_doc = itemView.findViewById(R.id.date_doc);
+            url = itemView.findViewById(R.id.url);
 
         }
 
-        public void bind(Event_Class event){
+        public void bind(Doc doc){
 
-            nom_event.setText(event.getTitle());
-            date_event.setText(event.getStart());
-            desc_event.setText(event.getDesc_event());
+            nom_doc.setText(doc.getNom());
+            date_doc.setText(doc.getDate());
+            url.setText(doc.getChemin());
 
-            if(event.getStatut().equals("oui")){pastille.getBackground().mutate().setColorFilter(Color.parseColor("#99cc00"), PorterDuff.Mode.MULTIPLY);}
-            if(event.getStatut().equals("non")){pastille.getBackground().mutate().setColorFilter(Color.parseColor("#cc0000"), PorterDuff.Mode.MULTIPLY);}
-
-            this.itemView.setId(event.getId());
+            this.itemView.setId(listeDoc.indexOf(doc));
             this.itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
 
-            int eventId = view.getId();
+            TextView url = view.findViewById(R.id.url);
+            TextView nom = view.findViewById(R.id.nom_doc);
 
-            Intent intent = new Intent(list_events.this, event.class);
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(club.getUrl()+url.getText().toString().substring(1)+nom.getText().toString()));
+            startActivity(browserIntent);
 
-            intent.putExtra("id", eventId);
-
-            startActivity(intent);
-
-            finish();
-
-        }*/
+        }
     }
 }

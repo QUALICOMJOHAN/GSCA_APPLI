@@ -10,6 +10,10 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -38,6 +42,17 @@ public class event extends AppCompatActivity {
     Event_Class event;
 
     OkHttpClient client;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Intent intent = new Intent(event.this, list_events.class);
+        startActivity(intent);
+
+        finish();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,10 +133,26 @@ public class event extends AppCompatActivity {
                                     public void onFailure(Call call, IOException e) {}
                                     @Override
                                     public void onResponse(Call call, Response response) throws IOException {
-                                        Intent intent = new Intent(event.this, list_events.class);
-                                        startActivity(intent);
 
-                                        finish();
+                                        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                                        try {
+                                            Date datestart = df.parse(debut_event.getText().toString());
+                                            Date dateend = df.parse(fin_event.getText().toString());
+
+                                            Calendar cal = Calendar.getInstance();
+                                            Intent intent1 = new Intent(Intent.ACTION_EDIT);
+                                            intent1.setType("vnd.android.cursor.item/event");
+                                            intent1.putExtra("beginTime", datestart.getTime());
+                                            intent1.putExtra("allDay", false);
+                                            intent1.putExtra("rrule", "FREQ=YEARLY");
+                                            intent1.putExtra("endTime", dateend.getTime());
+                                            intent1.putExtra("title", event_name.getText().toString());
+                                            startActivityForResult(intent1, 1);
+
+                                        } catch (ParseException e) {
+                                            e.printStackTrace();
+                                        }
 
                                     }
                                 });

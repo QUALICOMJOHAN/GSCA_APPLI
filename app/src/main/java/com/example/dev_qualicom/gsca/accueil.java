@@ -13,6 +13,7 @@ public class accueil extends AppCompatActivity {
     ImageButton btn_membre;
     ImageButton btn_event;
     ImageButton btn_document;
+    ImageButton btn_stat;
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -29,6 +30,7 @@ public class accueil extends AppCompatActivity {
         btn_membre = (ImageButton) findViewById(R.id.members);
         btn_event = (ImageButton) findViewById(R.id.events);
         btn_document = (ImageButton) findViewById(R.id.docs);
+        btn_stat = (ImageButton) findViewById(R.id.stats);
 
         disconnect = findViewById(R.id.disconnect);
 
@@ -57,6 +59,16 @@ public class accueil extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(accueil.this, list_docs.class);
+                startActivity(intent);
+
+            }
+        });
+
+        btn_stat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(accueil.this, stats.class);
                 startActivity(intent);
 
             }

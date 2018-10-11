@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
     <application
         android:allowBackup="true"
@@ -29,6 +31,7 @@
         <activity android:name=".Member" />
         <activity android:name=".list_events" />
         <activity android:name=".event" />
+        <activity android:name=".stats" />
 
         <service android:name=".MyFirebaseMessageService">
             <intent-filter>
