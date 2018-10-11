@@ -32,66 +32,129 @@
                 app:srcCompat="@drawable/logogsca" />
 
             <TextView
+                android:id="@+id/labelnomsociete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Société"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
+
+            <TextView
                 android:id="@+id/societe_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/nom_de_la_societe"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labeldescsociete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Description"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/societe_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/societe_desc"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labeladdsociete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Adresse"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/societe_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/add_societe"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labelatelsociete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Téléphone"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/societe_tel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/tel_societe"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labelasectorsociete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Secteur d'activité"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/societe_sector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/secteur_societe"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labelamainsectorsociete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Activité principale"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/societe_mainsector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/mainsector"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labelemailsociete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Adresse email "
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/societe_mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/mail_societe"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labelewebsociete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Site internet"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/societe_web"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/web_societe"
                 android:textSize="18sp" />
 
@@ -106,42 +169,82 @@
                 app:srcCompat="@drawable/logogsca" />
 
             <TextView
-                android:id="@+id/member_name"
+                android:id="@+id/labelenom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
+                android:text="Nom"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/member_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/name_member"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labeleprenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Prénom"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/membre_firstname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/firstname_member"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labeleposte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Poste occupé"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/membre_poste"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/post_member"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labeltelcontact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Téléphone"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/membre_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/tel_member"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/labelemailcontact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Adresse email "
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/membre_mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:text="@string/mail_member"
                 android:textSize="18sp" />
 

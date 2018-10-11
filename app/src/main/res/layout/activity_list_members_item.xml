@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="10dp">
+    android:paddingStart="10dp"
+    android:paddingLeft="10dp"
+    android:paddingEnd="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp">
 
     <ImageView
         android:id="@+id/img_profil"
@@ -21,9 +25,10 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="NOM Prénom"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
         app:layout_constraintLeft_toRightOf="@+id/img_profil"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
     <TextView
@@ -38,12 +43,16 @@
         app:layout_constraintTop_toBottomOf="@+id/nom_prenom" />
 
     <View
-        android:id="@+id/divider"
+
         android:layout_width="match_parent"
-        android:layout_height="3dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/img_profil" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -18,7 +18,7 @@
     <string name="firstname_member">Prénom du membre</string>
     <string name="post_member">Poste occupé</string>
     <string name="tel_member">Téléphone membre</string>
-    <string name="mail_member">Adrresse email membre</string>
+    <string name="mail_member">Adresse email membre</string>
     <string name="date_event">jj/mm/aaaa</string>
     <string name="desc_event">Description de l\'événement</string>
     <string name="nom_event">Nom de l\'événement</string>
