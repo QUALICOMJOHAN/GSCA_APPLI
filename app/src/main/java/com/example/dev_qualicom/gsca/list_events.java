@@ -1,10 +1,12 @@
 package com.example.dev_qualicom.gsca;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -67,8 +69,6 @@ public class list_events extends AppCompatActivity {
 
                         recyclerView = (RecyclerView) findViewById(R.id.list_event_ecran);
 
-                        Log.e("TEST", listeEvent.get(0).getBackgroundColor());
-
                         EventsAdapter eventsAdapter = new EventsAdapter();
                         llm.setOrientation(LinearLayoutManager.VERTICAL);
                         recyclerView.setLayoutManager(llm);
@@ -107,6 +107,7 @@ public class list_events extends AppCompatActivity {
         private TextView nom_event;
         private TextView date_event;
         private TextView desc_event;
+        private View pastille;
 
         public EventsHolder(View itemView) {
             super(itemView);
@@ -114,6 +115,7 @@ public class list_events extends AppCompatActivity {
             nom_event = itemView.findViewById(R.id.nom_event);
             date_event = itemView.findViewById(R.id.date_event);
             desc_event = itemView.findViewById(R.id.desc_event);
+            pastille = itemView.findViewById(R.id.pastille);
 
         }
 
@@ -123,6 +125,9 @@ public class list_events extends AppCompatActivity {
             date_event.setText(event.getStart());
             desc_event.setText(event.getDesc_event());
 
+            if(event.getStatut().equals("oui")){pastille.getBackground().mutate().setColorFilter(Color.parseColor("#99cc00"), PorterDuff.Mode.MULTIPLY);}
+            if(event.getStatut().equals("non")){pastille.getBackground().mutate().setColorFilter(Color.parseColor("#cc0000"), PorterDuff.Mode.MULTIPLY);}
+
             this.itemView.setId(event.getId());
             this.itemView.setOnClickListener(this);
         }
@@ -130,13 +135,15 @@ public class list_events extends AppCompatActivity {
         @Override
         public void onClick(View view) {
 
-            /*int memberId = view.getId();
+            int eventId = view.getId();
 
-            Intent intent = new Intent(Listmembers.this, Member.class);
+            Intent intent = new Intent(list_events.this, event.class);
 
-            intent.putExtra("id", memberId);
+            intent.putExtra("id", eventId);
 
-            startActivity(intent);*/
+            startActivity(intent);
+
+            finish();
 
         }
     }

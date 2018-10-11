@@ -1,7 +1,9 @@
 package com.example.dev_qualicom.gsca;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -10,6 +12,11 @@ public class accueil extends AppCompatActivity {
 
     ImageButton btn_membre;
     ImageButton btn_event;
+
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
+    FloatingActionButton disconnect;
 
     MembreSingleton membreSingleton;
 
@@ -20,6 +27,8 @@ public class accueil extends AppCompatActivity {
 
         btn_membre = (ImageButton) findViewById(R.id.members);
         btn_event = (ImageButton) findViewById(R.id.events);
+
+        disconnect = findViewById(R.id.disconnect);
 
         btn_membre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +46,28 @@ public class accueil extends AppCompatActivity {
 
                 Intent intent = new Intent(accueil.this, list_events.class);
                 startActivity(intent);
+
+            }
+        });
+
+        disconnect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mSharedPreferences = getSharedPreferences("ID", MODE_PRIVATE);
+                mEditor = mSharedPreferences.edit();
+
+                mEditor.remove("ID");
+                mEditor.remove("URL");
+                mEditor.remove("NAME");
+
+                mEditor.apply();
+
+
+                Intent intent = new Intent(accueil.this, Club_Log.class);
+                startActivity(intent);
+
+                finish();
 
             }
         });
