@@ -29,4 +29,6 @@
     <string name="fin_event">jj/mm/aaaa hh:mm</string>
     <string name="nb_places">Nombre de place(s)</string>
     <string name="prix_event">Prix</string>
+    <string name="nom_doc">NOM DU DOCUMENT</string>
+    <string name="date_doc">jj/mm/aaaa</string>
 </resources>

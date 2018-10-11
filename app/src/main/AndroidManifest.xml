@@ -3,19 +3,19 @@
     package="com.example.dev_qualicom.gsca">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/favicongsca"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
         <activity android:name=".Club_Log">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,12 +29,14 @@
         <activity android:name=".Member" />
         <activity android:name=".list_events" />
 
-        <service
-            android:name=".MyFirebaseMessageService">
+        <service android:name=".MyFirebaseMessageService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".list_docs" />
+        <activity android:name=".list_docs_item"></activity>
     </application>
 
 </manifest>
