@@ -81,14 +81,16 @@ public class stats extends AppCompatActivity {
                         df.setTimeZone(tz);
                         String time = df.format(new Date(millis));
 
-                        reunionsPIvalue.setText(stat.getParticipation());
-                        reunionsABSvalue.setText(stat.getAbsence());
-                        reunionsABSpercent.setText(stat.getParticipation_pourcent());
-                        reunionsTDPvalue.setText(df.format(millis));
-                        transacsvalue.setText(stat.getNbtran());
-                        transacsvalue2.setText(stat.getCa());
 
-                    }
+
+                            reunionsPIvalue.setText(stat.getParticipation());
+                            reunionsABSvalue.setText(stat.getAbsence());
+                            reunionsABSpercent.setText(stat.getParticipation_pourcent());
+                            reunionsTDPvalue.setText(df.format(millis));
+                            transacsvalue.setText(stat.getNbtran());
+                            transacsvalue2.setText(stat.getCa());
+                        }
+
                 });
 
             }

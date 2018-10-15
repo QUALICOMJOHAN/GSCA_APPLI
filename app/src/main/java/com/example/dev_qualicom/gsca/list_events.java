@@ -125,8 +125,12 @@ public class list_events extends AppCompatActivity {
             date_event.setText(event.getStart());
             desc_event.setText(event.getDesc_event());
 
-            if(event.getStatut().equals("oui")){pastille.getBackground().mutate().setColorFilter(Color.parseColor("#99cc00"), PorterDuff.Mode.MULTIPLY);}
-            if(event.getStatut().equals("non")){pastille.getBackground().mutate().setColorFilter(Color.parseColor("#cc0000"), PorterDuff.Mode.MULTIPLY);}
+            if(event.getStatut() != null){
+
+                if(event.getStatut().equals("oui")){pastille.getBackground().mutate().setColorFilter(Color.parseColor("#99cc00"), PorterDuff.Mode.MULTIPLY);}
+                if(event.getStatut().equals("non")){pastille.getBackground().mutate().setColorFilter(Color.parseColor("#cc0000"), PorterDuff.Mode.MULTIPLY);}
+
+            }
 
             this.itemView.setId(event.getId());
             this.itemView.setOnClickListener(this);

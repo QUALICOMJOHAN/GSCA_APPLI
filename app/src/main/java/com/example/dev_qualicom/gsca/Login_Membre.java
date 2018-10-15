@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -53,6 +54,8 @@ public class Login_Membre extends AppCompatActivity implements View.OnClickListe
 
                 String response = null;
 
+                Log.e("TEST", club.getUrl());
+
                 HttpUrl.Builder urlBuilder = HttpUrl.parse(club.getUrl()+"loginMobil.php").newBuilder();
                 urlBuilder.addQueryParameter("login", email.getText().toString());
                 urlBuilder.addQueryParameter("pass", pass.getText().toString());
@@ -62,6 +65,8 @@ public class Login_Membre extends AppCompatActivity implements View.OnClickListe
                     response = example.run(url);
 
                     JSONObject json = new JSONObject(response);
+
+                    Log.e("TEST", json.getString("id"));
 
                     if(json.getString("id") != ""){
 
