@@ -35,6 +35,7 @@ public class event extends AppCompatActivity {
 
     Button oui;
     Button non;
+    Button avec_invite;
 
     ClubSingleton club;
     MembreSingleton membre;
@@ -104,6 +105,7 @@ public class event extends AppCompatActivity {
 
                         oui = findViewById(R.id.oui);
                         non = findViewById(R.id.non);
+                        avec_invite = findViewById(R.id.avec_invite);
 
                         event_name.setText(event.getTitle());
                         desc_event.setText(event.getDesc_event());
@@ -189,6 +191,39 @@ public class event extends AppCompatActivity {
                             }
                         });
 
+                        avec_invite.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                                try {
+                                    Date datestart = df.parse(debut_event.getText().toString());
+                                    Date dateend = df.parse(fin_event.getText().toString());
+
+                                    Calendar cal = Calendar.getInstance();
+                                    Intent intent1 = new Intent(Intent.ACTION_EDIT);
+                                    intent1.setType("vnd.android.cursor.item/event");
+                                    intent1.putExtra("beginTime", datestart.getTime());
+                                    intent1.putExtra("allDay", false);
+                                    intent1.putExtra("rrule", "FREQ=YEARLY");
+                                    intent1.putExtra("endTime", dateend.getTime());
+                                    intent1.putExtra("title", event_name.getText().toString());
+                                    startActivityForResult(intent1, 1);
+
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+
+                                Intent intent = new Intent(event.this, invites.class);
+                                startActivity(intent);
+
+                                intent.putExtra("id", idevent);
+
+                                finish();
+
+                            }
+                        });
 
                     }
                 });
