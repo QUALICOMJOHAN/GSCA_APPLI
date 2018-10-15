@@ -19,11 +19,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".Club_Log">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Login_Membre" />
         <activity android:name=".accueil" />
@@ -40,7 +35,17 @@
         </service>
 
         <activity android:name=".list_docs" />
-        <activity android:name=".list_docs_item"></activity>
+        <activity android:name=".list_docs_item" />
+
+
+
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

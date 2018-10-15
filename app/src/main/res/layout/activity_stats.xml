@@ -79,6 +79,16 @@
                     android:textSize="18sp" />
 
                 <TextView
+                    android:id="@+id/reunionsABSpercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="20%"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp" />
+
+                <TextView
                     android:id="@+id/reunionsABSvalue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -88,15 +98,6 @@
                     android:textColor="@color/colorAccent"
                     android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/reunionsABSpercent"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="20%"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
