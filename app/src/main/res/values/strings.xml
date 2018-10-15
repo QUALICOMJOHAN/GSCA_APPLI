@@ -31,4 +31,17 @@
     <string name="prix_event">Prix</string>
     <string name="nom_doc">NOM DU DOCUMENT</string>
     <string name="date_doc">jj/mm/aaaa</string>
+    <string name="labelnomsociete">Société</string>
+    <string name="labeldescsociete">Description</string>
+    <string name="labeladdsociete">Adresse</string>
+    <string name="labelatelsociete">Téléphone</string>
+    <string name="labelasectorsociete">Secteur d\'activité</string>
+    <string name="labelamainsectorsociete">Activité principale</string>
+    <string name="labelemailsociete">Adresse email</string>
+    <string name="labelwebsociete">Site internet</string>
+    <string name="labelenom">Nom</string>
+    <string name="labeleprenom">Prénom</string>
+    <string name="labeleposte">Poste occupé</string>
+    <string name="labeltelcontact">Téléphone</string>
+    <string name="labelmailcontact">Adresse email</string>
 </resources>
