@@ -198,7 +198,7 @@
                     android:adjustViewBounds="true"
                     android:contentDescription="@string/app_name"
                     android:minHeight="150dp"
-                    android:scaleType="centerInside"
+
                     app:srcCompat="@drawable/logogsca" />
 
                 <TextView

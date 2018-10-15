@@ -18,8 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Club_Log">
-        </activity>
+        <activity android:name=".Club_Log"></activity>
         <activity android:name=".Login_Membre" />
         <activity android:name=".accueil" />
         <activity android:name=".Listmembers" />
@@ -36,9 +35,6 @@
 
         <activity android:name=".list_docs" />
         <activity android:name=".list_docs_item" />
-
-
-
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".invites"></activity>
     </application>
 
 </manifest>

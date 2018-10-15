@@ -184,6 +184,15 @@
                     android:text="Je ne viendrai pas "
                     android:textColor="@android:color/white" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/avec_invite"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:text="Je viendrai accompagné(e)"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
 

@@ -9,18 +9,23 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/lin_lay"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="368dp"
+        android:layout_height="551dp"
         android:layout_gravity="center"
 
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/splash"
-            android:layout_width="113dp"
-            android:layout_height="117dp"
-            android:background="@mipmap/favicongsca"
+            android:layout_width="149dp"
+            android:layout_height="154dp"
+            android:background="@drawable/splash"
             android:contentDescription="@string/app_name" />
 
     </LinearLayout>
