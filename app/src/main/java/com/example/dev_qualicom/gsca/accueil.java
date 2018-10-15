@@ -7,6 +7,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import java.io.IOException;
+
+import okhttp3.HttpUrl;
 
 public class accueil extends AppCompatActivity {
 
@@ -14,6 +19,10 @@ public class accueil extends AppCompatActivity {
     ImageButton btn_event;
     ImageButton btn_document;
     ImageButton btn_stat;
+    ClubSingleton club;
+    MembreSingleton membre;
+
+    TextView bvn;
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -27,10 +36,14 @@ public class accueil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
 
+        club = ClubSingleton.getInstance();
+        membre = MembreSingleton.getInstance();
+
         btn_membre = (ImageButton) findViewById(R.id.members);
         btn_event = (ImageButton) findViewById(R.id.events);
         btn_document = (ImageButton) findViewById(R.id.docs);
         btn_stat = (ImageButton) findViewById(R.id.stats);
+        bvn = (TextView) findViewById(R.id.bienvenue);
 
         disconnect = findViewById(R.id.disconnect);
 
@@ -88,6 +101,27 @@ public class accueil extends AppCompatActivity {
                 mEditor.apply();
 
 
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        WebService example = new WebService();
+                        String response = null;
+
+                        HttpUrl.Builder urlBuilder = HttpUrl.parse(club.getUrl() + "webService/logout.php").newBuilder();
+                        urlBuilder.addQueryParameter("id", Integer.toString(membre.getMembre().getId()));
+                        String url = urlBuilder.build().toString();
+                        try {
+                            response = example.run(url);
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                });
+
+                thread.start();
+
                 Intent intent = new Intent(accueil.this, Club_Log.class);
                 startActivity(intent);
 
@@ -97,6 +131,8 @@ public class accueil extends AppCompatActivity {
         });
 
         membreSingleton = MembreSingleton.getInstance();
+
+        bvn.setText("Bienvenue " + membreSingleton.getMembre().getPrenom_contact() + " " + membreSingleton.getMembre().getNom_contact());
 
     }
 }

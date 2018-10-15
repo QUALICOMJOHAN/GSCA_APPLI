@@ -1,16 +1,17 @@
 package com.example.dev_qualicom.gsca;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.PixelFormat;
-import android.support.v7.app.AppCompatActivity;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-import com.example.dev_qualicom.gsca.R;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -27,6 +28,13 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
         StartAnimations();
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     private void StartAnimations() {
@@ -54,7 +62,11 @@ public class SplashScreen extends AppCompatActivity {
                     Intent intent = new Intent(SplashScreen.this,
                             Club_Log.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent);
+
+                    if (isNetworkAvailable()) {
+                        startActivity(intent);
+                    }
+
                     SplashScreen.this.finish();
                 } catch (InterruptedException e) {
 
