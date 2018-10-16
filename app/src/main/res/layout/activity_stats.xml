@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/logogsca" />
 
     <ScrollView
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="455dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -31,7 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,10 +45,10 @@
                     android:id="@+id/reunionsPI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:text="Réunion(s) participée(s) / Invitation(s)"
                     android:textAlignment="textStart"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/reunionsPIvalue"
@@ -74,7 +75,7 @@
                     android:layout_weight="2"
                     android:text="Absence(s)"
                     android:textAlignment="textStart"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/reunionsABSpercent"
@@ -111,7 +112,7 @@
                     android:layout_weight="2"
                     android:text="Temps de parole moyen"
                     android:textAlignment="textStart"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/reunionsTDPvalue"
@@ -137,7 +138,7 @@
                     android:layout_weight="2"
                     android:text="Nombre de transaction(s)"
                     android:textAlignment="textStart"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/transacsvalue"
@@ -163,7 +164,7 @@
                     android:layout_weight="2"
                     android:text="Chiffre d'affaire généré"
                     android:textAlignment="textStart"
-                    android:textSize="18sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/transacsvalue2"
