@@ -195,31 +195,10 @@ public class event extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
 
-                                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
-                                try {
-                                    Date datestart = df.parse(debut_event.getText().toString());
-                                    Date dateend = df.parse(fin_event.getText().toString());
-
-                                    Calendar cal = Calendar.getInstance();
-                                    Intent intent1 = new Intent(Intent.ACTION_EDIT);
-                                    intent1.setType("vnd.android.cursor.item/event");
-                                    intent1.putExtra("beginTime", datestart.getTime());
-                                    intent1.putExtra("allDay", false);
-                                    intent1.putExtra("rrule", "FREQ=YEARLY");
-                                    intent1.putExtra("endTime", dateend.getTime());
-                                    intent1.putExtra("title", event_name.getText().toString());
-                                    startActivityForResult(intent1, 1);
-
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
-
                                 Intent intent = new Intent(event.this, invites.class);
-                                startActivity(intent);
-
                                 intent.putExtra("id", idevent);
-
+                                startActivity(intent);
+                                
                                 finish();
 
                             }

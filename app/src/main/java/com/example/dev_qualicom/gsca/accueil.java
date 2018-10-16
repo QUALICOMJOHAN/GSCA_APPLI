@@ -22,6 +22,8 @@ public class accueil extends AppCompatActivity {
     ClubSingleton club;
     MembreSingleton membre;
 
+    TextView nomclub;
+
     TextView bvn;
 
     private SharedPreferences mSharedPreferences;
@@ -44,6 +46,8 @@ public class accueil extends AppCompatActivity {
         btn_document = (ImageButton) findViewById(R.id.docs);
         btn_stat = (ImageButton) findViewById(R.id.stats);
         bvn = (TextView) findViewById(R.id.bienvenue);
+
+        nomclub = findViewById(R.id.nomduclub);
 
         disconnect = findViewById(R.id.disconnect);
 
@@ -133,6 +137,8 @@ public class accueil extends AppCompatActivity {
         membreSingleton = MembreSingleton.getInstance();
 
         bvn.setText("Bienvenue " + membreSingleton.getMembre().getPrenom_contact() + " " + membreSingleton.getMembre().getNom_contact());
+        nomclub.setText(club.getNom());
+        
 
     }
 }

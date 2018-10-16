@@ -36,9 +36,15 @@ public class MyFirebaseMessageService extends FirebaseMessagingService {
 
     private  void sendNotification(String messageBoby){
 
-        Intent intent = new Intent(getApplicationContext(), list_docs.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent;
 
+        if(messageBoby.startsWith("Vous avez été invité a la réunion")){
+            intent = new Intent(getApplicationContext(), list_events.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        }else{
+            intent = new Intent(getApplicationContext(), list_docs.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
 
         long notificatioId = System.currentTimeMillis();
 

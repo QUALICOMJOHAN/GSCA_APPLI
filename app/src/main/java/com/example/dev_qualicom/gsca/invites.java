@@ -7,7 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -40,6 +46,7 @@ public class invites extends AppCompatActivity {
     MembreSingleton membre;
 
     int idevent;
+    Event_Class event;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,10 +110,55 @@ public class invites extends AppCompatActivity {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
 
-                        Intent intent = new Intent(invites.this, list_events.class);
-                        startActivity(intent);
 
-                        finish();
+                        HttpUrl.Builder urlBuilder = HttpUrl.parse(club.getUrl() + "webService/getEvent.php").newBuilder();
+                        urlBuilder.addQueryParameter("id", Integer.toString(idevent));
+                        urlBuilder.addQueryParameter("id_membre", Integer.toString(membre.getMembre().getId()));
+
+                        String url = urlBuilder.build().toString();
+                        Request request = new Request.Builder()
+                                .url(url)
+                                .build();
+
+                        client.newCall(request).enqueue(new Callback() {
+                            @Override
+                            public void onFailure(Call call, IOException e) {
+
+                            }
+
+                            @Override
+                            public void onResponse(Call call, Response response) throws IOException {
+
+                                Gson gson = new Gson();
+                                String json = response.body().string().toString();
+                                event = gson.fromJson(json, Event_Class.class);
+
+                                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                                try {
+                                    Date datestart = df.parse(event.getStart().toString());
+                                    Date dateend = df.parse(event.getEnd().toString());
+
+                                    Calendar cal = Calendar.getInstance();
+                                    Intent intent1 = new Intent(Intent.ACTION_EDIT);
+                                    intent1.setType("vnd.android.cursor.item/event");
+                                    intent1.putExtra("beginTime", datestart.getTime());
+                                    intent1.putExtra("allDay", false);
+                                    intent1.putExtra("rrule", "FREQ=YEARLY");
+                                    intent1.putExtra("endTime", dateend.getTime());
+                                    intent1.putExtra("title", event.getTitle().toString());
+                                    startActivityForResult(intent1, 1);
+
+                                    finish();
+
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+
+
+
+                            }
+                        });
 
                     }
                 });
