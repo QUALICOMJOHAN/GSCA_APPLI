@@ -116,6 +116,21 @@ public class Member extends AppCompatActivity {
                         member_number.setText(membre.getTel_contact());
                         member_mail.setText(membre.getMail_contact());
 
+
+                        societe_name.setTextIsSelectable(true);
+                        societe_desc.setTextIsSelectable(true);
+                        societe_address.setTextIsSelectable(true);
+                        societe_tel.setTextIsSelectable(true);
+                        societe_sector.setTextIsSelectable(true);
+                        societe_mainsector.setTextIsSelectable(true);
+                        societe_mail.setTextIsSelectable(true);
+                        societe_web.setTextIsSelectable(true);
+                        member_name.setTextIsSelectable(true);
+                        member_firstname.setTextIsSelectable(true);
+                        member_poste.setTextIsSelectable(true);
+                        member_number.setTextIsSelectable(true);
+                        member_mail.setTextIsSelectable(true);
+
                         societe_tel.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
