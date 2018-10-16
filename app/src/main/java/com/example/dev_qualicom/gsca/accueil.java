@@ -138,7 +138,7 @@ public class accueil extends AppCompatActivity {
 
         bvn.setText("Bienvenue " + membreSingleton.getMembre().getPrenom_contact() + " " + membreSingleton.getMembre().getNom_contact());
         nomclub.setText(club.getNom());
-        
+
 
     }
 }
