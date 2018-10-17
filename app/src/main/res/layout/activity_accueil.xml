@@ -7,15 +7,23 @@
     android:background="@android:color/white"
     tools:context=".accueil">
 
+    <FrameLayout
+        android:id="@+id/pub"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/pub_qualicom">
+
+    </FrameLayout>
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="0dp"
-        android:layout_height="65dp"
+        android:layout_height="50dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pub"
         app:layout_constraintVertical_weight="0.1"
         app:srcCompat="@drawable/logogsca" />
 
@@ -42,6 +50,7 @@
             android:id="@+id/events_members"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:weightSum="1"
             app:layout_constraintTop_toBottomOf="@+id/logo">
@@ -50,16 +59,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="0.6"
                 android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/members"
                     android:layout_width="wrap_content"
-                    android:layout_height="190dp"
+                    android:layout_height="160dp"
                     android:background="@android:color/white"
                     android:contentDescription="@string/app_name"
-                    android:elevation="0dp"
                     android:scaleType="centerInside"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:srcCompat="@drawable/members"
@@ -79,13 +87,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="0.6"
                 android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/events"
                     android:layout_width="wrap_content"
-                    android:layout_height="190dp"
+                    android:layout_height="160dp"
                     android:background="@android:color/white"
                     android:contentDescription="@string/app_name"
                     android:scaleType="centerInside"
@@ -107,19 +115,22 @@
             android:id="@+id/stats_docs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:orientation="horizontal"
+            android:weightSum="1"
             app:layout_constraintTop_toBottomOf="@+id/events_members">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="0.6"
                 android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/stats"
                     android:layout_width="wrap_content"
-                    android:layout_height="190dp"
+                    android:layout_height="160dp"
                     android:background="@android:color/white"
                     android:contentDescription="@string/app_name"
                     android:scaleType="centerInside"
@@ -139,13 +150,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="0.6"
                 android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/docs"
                     android:layout_width="wrap_content"
-                    android:layout_height="190dp"
+                    android:layout_height="160dp"
                     android:background="@android:color/white"
                     android:contentDescription="@string/app_name"
                     android:scaleType="centerInside"

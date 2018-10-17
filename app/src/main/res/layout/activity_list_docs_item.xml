@@ -4,52 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="10dp"
-    android:paddingLeft="10dp"
-    android:paddingEnd="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="10dp"
     tools:context=".list_docs_item">
 
     <TextView
         android:id="@+id/nom_doc"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:text="@string/nom_doc"
-        android:textAlignment="viewStart"
+        android:textAlignment="textStart"
         android:textAllCaps="true"
         android:textColor="#1b9cfc"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/date_doc"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="@string/date_doc"
-        android:textAlignment="viewStart"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@+id/nom_doc" />
 
     <TextView
         android:id="@+id/url"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="2dp"
+        android:layout_height="2dp"
         android:text="TextView"
-        android:textAlignment="viewStart"
+        android:textAlignment="textStart"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/date_doc"
-        app:layout_constraintEnd_toStartOf="@+id/nom_doc"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/nom_doc"
-        app:layout_constraintTop_toBottomOf="@+id/nom_doc" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
 

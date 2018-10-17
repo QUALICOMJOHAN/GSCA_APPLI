@@ -20,17 +20,19 @@
         app:srcCompat="@drawable/logogsca" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list_docs_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="0dp"
             tools:listitem="@layout/activity_list_docs_item" />
