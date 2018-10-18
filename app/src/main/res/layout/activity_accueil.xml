@@ -7,13 +7,13 @@
     android:background="@android:color/white"
     tools:context=".accueil">
 
-    <FrameLayout
+    <ImageView
         android:id="@+id/pub"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/pub_qualicom">
+        android:layout_height="1dp"
+        android:visibility="invisible">
 
-    </FrameLayout>
+    </ImageView>
 
     <ImageView
         android:id="@+id/logo"
