@@ -7,13 +7,13 @@
     android:background="@android:color/white"
     tools:context=".accueil">
 
-    <FrameLayout
+    <ImageView
         android:id="@+id/pub"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/pub_qualicom">
 
-    </FrameLayout>
+    </ImageView>
 
     <ImageView
         android:id="@+id/logo"
@@ -41,8 +41,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@android:color/white"
-        android:gravity="top"
+        android:gravity="center"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/disconnect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bienvenue">
 
